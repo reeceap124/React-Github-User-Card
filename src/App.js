@@ -4,10 +4,13 @@ import axios from 'axios';
 import CardList from './components/CardList'
 
 import './App.css';
+import UserCard from './components/UserCard';
 
 class App extends React.Component {
   state ={
-    users: []
+    users: [],
+    user: '',
+    showUserCard: false
   }
 
   componentDidMount(){
@@ -30,9 +33,8 @@ class App extends React.Component {
       })
   }
 
-  handleCardClick = e =>{
-    e.preventDefault();
-    // how to create a popup item
+  handleCard = () => {
+    this.setState({showUserCard: !this.state.showUserCard})
   }
 
 
@@ -40,8 +42,9 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>Your Followers</h1>
-        <CardList users={this.state.users}/>
-        
+        <CardList users={this.state.users} handleCard={this.handleCard}/>
+        {this.state.showUserCard ? <UserCard users={this.state.users}/> : null}
+        {/* need to get the popup to show up. need to get popup to be customized by user */}
       </div>
     );
   }

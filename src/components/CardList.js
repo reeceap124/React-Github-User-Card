@@ -6,7 +6,7 @@ const CardList = props => {
     return (
         <div className='userList'>
             {props.users.map(user => (
-                <CardForm key={user.id} user={user}/>
+                <CardForm key={user.id} user={user} handleCard={props.handleCard}/>
             ))}
         </div>
     )

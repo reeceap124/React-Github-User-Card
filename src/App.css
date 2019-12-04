@@ -43,3 +43,9 @@
   width: 50%;
   height: auto
 }
+
+.userCard {
+  position: fixed;
+  margin: auto;
+  background: red;
+}

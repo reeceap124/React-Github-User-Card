@@ -2,7 +2,7 @@ import React from 'react';
 
 const CardForm = props => {
     return (
-        <div className='user' >
+        <div className='user' onClick={props.handleCard}>
             <h2>{props.user.name}</h2>
             <img src={props.user.avatar_url} alt='profile pic'/>
             <p>Website: {(props.user.blog === "") ? 'Not Listed' : props.user.blog}</p>
