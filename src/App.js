@@ -9,7 +9,7 @@ import UserCard from './components/UserCard';
 class App extends React.Component {
   state ={
     users: [],
-    user: '',
+    user: {},
     showUserCard: false
   }
 
@@ -33,17 +33,48 @@ class App extends React.Component {
       })
   }
 
-  handleCard = () => {
-    this.setState({showUserCard: !this.state.showUserCard})
+  toggleCard = () => {
+    if (this.state.showUserCard){
+      return(
+        this.setState({
+          showUserCard: !this.state.showUserCard
+        })
+      )
+      
+    }
+    return null
+  }
+
+  handleCard = (id) => {
+      this.state.users.map(val => {
+        if(val.id === id) {
+          console.log('toggled the user')
+          return(
+            this.setState({
+            showUserCard: !this.state.showUserCard,
+            user: val
+            })
+          )
+          
+        } else {
+          return(
+            null
+          )
+          
+        }
+      })
+    
   }
 
 
   render(){
     return (
       <div className="App">
-        <h1>Your Followers</h1>
+        <div onClick={this.toggleCard}>
+          <h1>Your Followers</h1>
         <CardList users={this.state.users} handleCard={this.handleCard}/>
-        {this.state.showUserCard ? <UserCard users={this.state.users}/> : null}
+        </div>
+        {this.state.showUserCard ? <UserCard user={this.state.user} toggleCard={this.toggleCard}/> : null}
         {/* need to get the popup to show up. need to get popup to be customized by user */}
       </div>
     );

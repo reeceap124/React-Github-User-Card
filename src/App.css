@@ -1,9 +1,10 @@
-/* .App * {
+.App * {
+  box-sizing: border-box;
   border: 1px solid gray;
-} */
+}
 .App {
   text-align: center;
-  box-sizing: border-box;
+  
 }
 
 .App-logo {
@@ -46,6 +47,27 @@
 
 .userCard {
   position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   margin: auto;
-  background: red;
+  width: 300px;
+  height: 500px;
+  background: steelblue;
+  border-radius: 5px;
+  box-shadow: -3px 3px 6px  black;
+}
+
+.imgContainer{
+  
+  margin: auto;
+  width: 100%;
+  padding: 10%;
+}
+
+.imgContainer img {
+  width: 100%;
+  height: auto;
+
 }
