@@ -1,10 +1,14 @@
 .App * {
   box-sizing: border-box;
-  border: 1px solid gray;
+  
+  /* border: 1px solid gray; */
 }
+
+
+
 .App {
   text-align: center;
-  
+  background: #5a84a7;
 }
 
 .App-logo {
@@ -38,6 +42,14 @@
   width: 20%;
   min-width: 200px;
   margin: 2%;
+  background: #46b477;
+  border-radius: 5px;
+  box-shadow: -3px 3px 6px  #5b7e9b;
+}
+
+.user p {
+  overflow-wrap: break-word;
+  padding: 3%;
 }
 
 .user img {
@@ -69,5 +81,6 @@
 .imgContainer img {
   width: 100%;
   height: auto;
+  border-radius: 5px;
 
 }

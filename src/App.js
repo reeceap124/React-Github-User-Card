@@ -36,6 +36,7 @@ class App extends React.Component {
   toggleCard = () => {
     if (this.state.showUserCard){
       return(
+        document.body.classList.remove('cardSelected'),
         this.setState({
           showUserCard: !this.state.showUserCard
         })
@@ -50,6 +51,7 @@ class App extends React.Component {
         if(val.id === id) {
           console.log('toggled the user')
           return(
+            
             this.setState({
             showUserCard: !this.state.showUserCard,
             user: val
@@ -69,7 +71,7 @@ class App extends React.Component {
 
   render(){
     return (
-      <div className="App">
+      <div className='App'>
         <div onClick={this.toggleCard}>
           <h1>Your Followers</h1>
         <CardList users={this.state.users} handleCard={this.handleCard}/>
